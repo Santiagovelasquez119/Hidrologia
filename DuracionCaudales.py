@@ -29,7 +29,7 @@ def curvaDuracion(mes,nommes:str):
 
 def Grafica1x1():
     plt.figure()
-    plt.title('Curvas de duración de caudales. Estación: El Jordán')
+    plt.title('Curvas de duración de caudales')
     plt.xlabel('% Excedencia')
     plt.ylabel(r'Caudal medio diario $[m^{3}/2]$')
     plt.grid(ls='-')
@@ -83,7 +83,7 @@ def Grafica_nxn():
              label='Abril')
 
     ax[1,0].set_title('Mayo')
-    ax[1, 0].set_ylabel(r'Caudal medio diario $[m^{3}/s]$', fontsize=1)
+    ax[1, 0].set_ylabel(r'Caudal medio diario $[m^{3}/s]$', fontsize=10)
     ax[1,0].grid(ls='-')
     ax[1,0].plot(curvaDuracion(mayo, 'Mayo')[0], curvaDuracion(mayo, 'Mayo')[1], marker='', color='m', ls='-', label='Mayo')
 
@@ -127,9 +127,9 @@ def Grafica_nxn():
     ax[2, 3].plot(curvaDuracion(diciembre, 'Diciembre')[0], curvaDuracion(diciembre, 'Diciembre')[1], marker='',
              color='#FF4500', ls='-', label='Diciembre')
 
-    fig.suptitle('Curvas de duración. Estación: El Jordán')
+    fig.suptitle('Curvas de duración por mes')
     plt.tight_layout()
-    plt.savefig('CurvasDuracionmes.png', dpi=600)
+    plt.savefig('CurvasDuracionmes.png', dpi=300)
     plt.show()
 
 #-------Abrir el archivo--------------------
@@ -191,7 +191,7 @@ for e in dataf.values:
 #---------------------
 
 
-print(Grafica1x1())
+print(Grafica_nxn())
 
 
 
