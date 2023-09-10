@@ -32,7 +32,6 @@ def Grafica1x1():
     plt.title('Curvas de duración de caudales')
     plt.xlabel('% Excedencia')
     plt.ylabel(r'Caudal medio diario $[m^{3}/2]$')
-    plt.grid(ls='-')
     plt.plot(curvaDuracion(enero, 'Enero')[0], curvaDuracion(enero, 'Enero')[1], marker='', color='b', ls='-',
              label='Enero')
     plt.plot(curvaDuracion(febrero, 'Febrero')[0], curvaDuracion(febrero, 'Febrero')[1], marker='', color='g', ls='-',
@@ -61,68 +60,62 @@ def Grafica1x1():
     plt.show()
 
 def Grafica_nxn():
-    fig, ax = plt.subplots(3,4,sharex = True)
+    fig, ax = plt.subplots(3,4,sharex = True, sharey=True)
     ax[0,0].set_title('Enero')
     #ax[0,0].set_ylabel(r'Caudal medio diario $[m^{3}/s]$', fontsize=8)
     ax[0,0].plot(curvaDuracion(enero, 'Enero')[0], curvaDuracion(enero, 'Enero')[1], marker='', color='b', ls='-')
-    ax[0,0].grid(ls='-')
 
     ax[0,1].set_title('Febrero')
-    ax[0, 1].grid(ls='-')
+
     ax[0,1].plot(curvaDuracion(febrero, 'Febrero')[0], curvaDuracion(febrero, 'Febrero')[1], marker='', color='g', ls='-',
              label='Febrero')
 
     ax[0, 2].set_title('Marzo')
-    ax[0, 2].grid(ls='-')
+
     ax[0,2].plot(curvaDuracion(marzo, 'Marzo')[0], curvaDuracion(marzo, 'Marzo')[1], marker='', color='r', ls='-',
              label='Marzo')
 
     ax[0, 3].set_title('Abril')
-    ax[0, 3].grid(ls='-')
+
     ax[0,3].plot(curvaDuracion(abril, 'Abril')[0], curvaDuracion(abril, 'Abril')[1], marker='', color='c', ls='-',
              label='Abril')
 
     ax[1,0].set_title('Mayo')
     ax[1, 0].set_ylabel(r'Caudal medio diario $[m^{3}/s]$', fontsize=10)
-    ax[1,0].grid(ls='-')
     ax[1,0].plot(curvaDuracion(mayo, 'Mayo')[0], curvaDuracion(mayo, 'Mayo')[1], marker='', color='m', ls='-', label='Mayo')
 
     ax[1, 1].set_title('Junio')
-    ax[1, 1].grid(ls='-')
+
     ax[1,1].plot(curvaDuracion(junio, 'Junio')[0], curvaDuracion(junio, 'Junio')[1], marker='', color='y', ls='-',
              label='Junio')
 
     ax[1, 2].set_title('Julio')
-    ax[1, 2].grid(ls='-')
+
     ax[1,2].plot(curvaDuracion(julio, 'Julio')[0], curvaDuracion(julio, 'Julio')[1], marker='', color='k', ls='-',
              label='Julio')
 
     ax[1, 3].set_title('Agosto')
-    ax[1, 3].grid(ls='-')
+
     ax[1,3].plot(curvaDuracion(agosto, 'Agosto')[0], curvaDuracion(agosto, 'Agosto')[1], marker='', color='#FFD700', ls='-',
              label='Agosto')
 
     ax[2,0].set_title('Septiembre')
-    ax[2,0].grid(ls='-')
     #ax[2, 0].set_ylabel(r'Caudal medio diario $[m^{3}/s]$', fontsize=8)
     ax[2, 0].set_xlabel('% Excedencia')
     ax[2,0].plot(curvaDuracion(septiembre, 'Septiembre')[0], curvaDuracion(septiembre, 'Septiembre')[1], marker='',
           color='#FF00FF', ls='-', label='Septiembre')
 
     ax[2,1].set_title('Octubre')
-    ax[2,1].grid(ls='-')
     ax[2, 1].set_xlabel('% Excedencia')
     ax[2,1].plot(curvaDuracion(octubre, 'Octubre')[0], curvaDuracion(octubre, 'Octubre')[1], marker='', color='#FF0000',
              ls='-', label='Octubre')
 
     ax[2,2].set_title('Noviembre')
-    ax[2,2].grid(ls='-')
     ax[2, 2].set_xlabel('% Excedencia')
     ax[2, 2].plot(curvaDuracion(noviembre, 'Noviembre')[0], curvaDuracion(noviembre, 'Noviembre')[1], marker='',
              color='#800000', ls='-', label='Noviembre')
 
     ax[2,3].set_title('Diciembre')
-    ax[2,3].grid(ls='-')
     ax[2, 3].set_xlabel('% Excedencia')
     ax[2, 3].plot(curvaDuracion(diciembre, 'Diciembre')[0], curvaDuracion(diciembre, 'Diciembre')[1], marker='',
              color='#FF4500', ls='-', label='Diciembre')
@@ -191,7 +184,7 @@ for e in dataf.values:
 #---------------------
 
 
-print(Grafica_nxn())
+print(Grafica1x1())
 
 
 

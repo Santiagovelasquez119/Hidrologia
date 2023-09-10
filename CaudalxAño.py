@@ -12,9 +12,7 @@ def Graficar():
     plt.title('Serie histórica: El Jordán 1981-2023')
     plt.xlabel('Año')
     plt.ylabel(r'Caudal medio diario $[m^{3}/s]$')
-    plt.grid(ls='--')
     plt.plot(fecha2, caudal, marker='.', color='b', ls='')
-    plt.legend()
     plt.savefig('CauCuenca.png',dpi=300)
     plt.show()
 

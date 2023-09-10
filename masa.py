@@ -87,7 +87,6 @@ print(VAcum)
 
 fig, ax1 = plt.subplots()
 plt.title('Curva de variación estacional y masa')
-plt.grid(ls='--')
 ax1.plot(num, Q)
 ax1.set_xlabel('Day of year')
 ax1.set_ylabel(r'Caudal $[m^{3}/s]$')
